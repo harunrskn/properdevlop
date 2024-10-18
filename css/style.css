@@ -415,7 +415,7 @@ h6 {
   }
   #team .card .card-img-top {
     object-fit: cover;
-    height: auto; /* Adjust the height as needed */
+    height: 50px; /* Adjust the height as needed */
     width: 100%; /* Ensure the image takes the full width of its container */
   }
 }
@@ -513,7 +513,7 @@ h6 {
     /* Lebar gambar kartu menjadi 100% */
     height: auto;
     /* Biarkan tinggi gambar disesuaikan secara otomatis */
-    transition: transform 0.5s ease;
+    transition: transform 0.9s ease;
   }
 
   .card-body {
