@@ -122,7 +122,14 @@
           </div>
 
           <div class="col-lg-6 background order-lg-2 order-1 wow fadeInRight">
-            <img class="img-fluid" src="img/logo-final2.png" loading="lazy" alt="">
+            
+            <img class="img-fluid"src="img/logo-final2.png" 
+  data-src="img/optimized-image.jpg" 
+  alt="Descriptive Alt Text" 
+  loading="lazy" 
+  width="300" 
+  height="200" 
+  class="lazyload" />
           </div>
         </div>
 
@@ -160,6 +167,8 @@
       </div>
     </section><!-- #facts -->
 
+    
+
     <!--==========================
       Services Section
     ============================-->
@@ -194,7 +203,7 @@
   <div class="container">
     <div class="section-header">
       <h3 class="section-title">Work</h3>
-      <p class="section-description">"Menjadi lebih baik dengan terus melangkah ke depan"</p>
+      <p class="section-description">"Menjadi lebih baik dengan terus melangkah ke depan dan memberikan inovasi inovasi baru"</p>
     </div>
     <div class="portfolio-grid">
       <div class="card mb-3">
@@ -245,7 +254,7 @@
               identitas visual yang unik dan menarik untuk merek atau proyek Anda. Dari desain logo hingga materi
               pemasaran cetak dan digital, kami menyediakan solusi desain grafis yang berkualitas tinggi untuk memenuhi
               kebutuhan branding Anda.</p>
-            <a href="#" class="showMore" onclick="toggleDescription(event)">Lihat Selengkapnya</a>
+            <a href="" class="showMore" onclick="toggleDescription(event)">Lihat Selengkapnya</a>
             <a href="https://wa.me/+6285893552879" class="btn btn-success">Buat Sekarang</a>
           </div>
         </div>
@@ -427,7 +436,7 @@
 
 
 
- <script>
+<script>
   jQuery(document).ready(function ($) {
     // Header fixed and Back to top button
     $(window).scroll(function () {
@@ -443,7 +452,7 @@
     $('.back-to-top').click(function () {
       $('html, body').animate({
         scrollTop: 0
-      }, 800, ); // Changed duration to 800ms for slower scroll
+      }, 500); // Changed duration to 500ms for a more responsive scroll
       return false;
     });
 
@@ -453,22 +462,31 @@
       let st = $(this).scrollTop();
       if (st > lastScrollTop) {
         // downscroll code
-        $('#header').stop().animate({ top: '-100px' }, 200); // Smooth transition with 300ms duration
+        $('#header').stop().animate({ top: '-100px' }, 200); // Smooth transition with 200ms duration
       } else {
         // upscroll code
-        $('#header').stop().animate({ top: '0' }, 200); // Smooth transition with 300ms duration
+        $('#header').stop().animate({ top: '0' }, 200); // Smooth transition with 200ms duration
       }
       lastScrollTop = st;
     });
   });
 
-      function toggleDescription(event) {
-        event.preventDefault();
-        var description = event.target.previousElementSibling;
-        description.style.display = description.style.display === 'block' ? '-webkit-box' : 'block';
-      }
+  function toggleDescription(event) {
+    event.preventDefault();
+    var description = event.target.previousElementSibling;
+    var showMoreLink = event.target;
 
+    if (description.style.display === 'block') {
+      description.style.display = '-webkit-box';
+      showMoreLink.textContent = 'Sembunyikan';
+    } else {
+      description.style.display = 'block';
+      $(description).animate({ height: "toggle" }, 200);
+      showMoreLink.textContent = 'lihat selengkapnya';
+    }
+  }
 </script>
+
 
 <!-- ?\ -->
 <!-- create by harun -->
