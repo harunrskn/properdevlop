@@ -110,6 +110,7 @@
       let description = event.target.parentNode.querySelector('.description');
       description.classList.toggle('show');
     }
+    
 
 
     // Porfolio filter
